@@ -1,3 +1,1 @@
-konnnitiwa
-kousinn
-こっちも確認
+nakasima
