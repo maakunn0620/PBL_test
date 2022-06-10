@@ -1,2 +1,3 @@
 konnnitiwa
 kousinn
+こっちも確認
