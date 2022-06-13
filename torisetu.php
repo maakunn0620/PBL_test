@@ -20,10 +20,14 @@ git commit -m "更新する詳細やコメントを記入"
 git push origin hatamoto(コピーしたいブランチ)
 
 //自分のブランチからメインのdevelopmentブランチに反映//
-githabのサイトからpull requestを送る
+githabのサイトにアクセスする
+Compare & pull requestで変更点を確認
 base:development ← compare:hatamoto 
 上記の形になっているか確認する(右は自分の名前のブランチが入る)
-変更点が表示されるため
+確認してよければpull requestからCreate pull requestを作成する
+更にMerge pull requestをクリックし、Confiem mergeをクリックすることで
+developmentブランチに変更点を更新できる
+
 //ブランチの移動//
 git checkout main
 
