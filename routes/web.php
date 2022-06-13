@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\AddController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-///aaaaaaaaaaaaaaaaa
+Route::get('/showall', [SearchController::class, 'showall']);
+Route::post('/showall', [SearchController::class, 'showall']);
+Route::get('/add', [AddController::class, 'form']);
+Route::post('/add', [AddController::class, 'add']);
