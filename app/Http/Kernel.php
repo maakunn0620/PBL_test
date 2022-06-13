@@ -1,4 +1,4 @@
-<?php //kome
+<?php
 
 namespace App\Http;
 
