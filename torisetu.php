@@ -4,20 +4,26 @@ git clone で作成されたファイルにcdで移動後にコマンド操作�
 PCで別のブランチのデータ作業がしたい場合ブランチを移動しなければいけない
 
 //データの更新方法//
-git pull origin main
+git pull origin hatamoto
 git add .
 git commit -m "a"
-git push origin main
+git push origin hatamoto
 
 作業前にローカルにリモートの内容をコピーする
-git pull origin main(コピーしたいブランチ)
+git pull origin hatamoto
+hatamotoの部分は自分の名前のローマ字に変更する
 ローカルに更新した内容を反映すると申請
 git add .（index.phpとファイルを指定するか.で全部を指定する）
 ローカルに更新を確定する
 git commit -m "更新する詳細やコメントを記入"
 リモートにローカルのデータをコピーする
-git push origin main(コピーしたいブランチcd)
+git push origin hatamoto(コピーしたいブランチ)
 
+//自分のブランチからメインのdevelopmentブランチに反映//
+githabのサイトからpull requestを送る
+base:development ← compare:hatamoto 
+上記の形になっているか確認する(右は自分の名前のブランチが入る)
+変更点が表示されるため
 //ブランチの移動//
 git checkout main
 
