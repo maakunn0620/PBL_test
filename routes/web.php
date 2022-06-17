@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AddController;
-use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +19,23 @@ use App\Http\Controllers\UpdateController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/top', [Controller::class, 'top']);
+Route::get('/list', [Controller::class, 'list']);
+Route::get('/search', [Controller::class, 'search']);
+Route::get('/data_list', [Controller::class, 'data_list']);
+Route::post('/data_list', [Controller::class, 'data_list']);
+
 Route::get('/showall', [SearchController::class, 'showall']);
 Route::post('/showall', [SearchController::class, 'showall']);
 Route::get('/add', [AddController::class, 'form']);
 Route::post('/add', [AddController::class, 'add']);
+<<<<<<< HEAD
 
 //更新
 Route::get('/edit', [UpdateController::class, 'index']);
 Route::post('/edit', [UpdateController::class, 'edit_search']);
+=======
+Route::get('/search',[SearchController::class,'showsearch']);
+Route::get('/a', [SearchController::class, 'a']);
+>>>>>>> d496fc38fd42dc08fa1e7c375970ac6fcce6c8ee

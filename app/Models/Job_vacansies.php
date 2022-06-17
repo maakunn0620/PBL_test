@@ -13,6 +13,7 @@ class Job_vacansies extends Model
         DB::insert('insert into job_vacacies (job_no, company, pdf, cment, address, jobs, company_url)
         values(:job_no, :company, :pdf, :comment, :address, :jobs, :company_url)', $vacansies);
     }
+<<<<<<< HEAD
     public function DB_search(array $param){
         $update_sub = DB::select("select No, A.job_no, company, GROUP_CONCAT(distinct department_name) as department_name, GROUP_CONCAT(distinct area_no) as area_no, B.job_department,pdf, address, company_url, cment
         from job_vacacies A
@@ -23,4 +24,6 @@ class Job_vacansies extends Model
         HAVING company = :company_name;", $param);
         return $update_sub;
     }
+=======
+>>>>>>> d496fc38fd42dc08fa1e7c375970ac6fcce6c8ee
 }

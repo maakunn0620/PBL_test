@@ -14,10 +14,19 @@ class SearchController extends Controller
         $Department = new Department;
         $job_no  = $Department->search();
         return view('list',compact('job_no'));
+<<<<<<< HEAD
+=======
     }
-
-    /*public function search(){
-        $job_no = DB::select("select company, jobs, address, GROUP_CONCAT(distinct department_name) as department_name from job_vacacies A inner join department B ON A.job_no = B.job_no inner join department_master C ON C.job_department = B.job_department group by B.job_no;");
-        return view('search.search',compact('job_no'));
-    }*/
+    public function showsearch()
+    {
+        return view('search');
+>>>>>>> d496fc38fd42dc08fa1e7c375970ac6fcce6c8ee
+    }
 }
+    }
+    public function a()
+    {
+        $Department = new Department;
+        $job_no  = $Department->search();
+        return view('data_list',compact('job_no'));
+    }
