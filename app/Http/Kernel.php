@@ -1,4 +1,4 @@
-<?php //hatamoto
+<?php 
 
 namespace App\Http;
 
