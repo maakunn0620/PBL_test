@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Http\Controllers;
@@ -12,7 +13,7 @@ class SearchController extends Controller
     {
         $Department = new Department;
         $job_no  = $Department->search();
-        return view('search.search',compact('job_no'));
+        return view('list',compact('job_no'));
     }
 
     /*public function search(){

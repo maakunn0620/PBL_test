@@ -4,7 +4,8 @@
         <title>新規登録</title>
     </head>
     <body>
-        <form method="POST" action="#">
+        <form method="POST" action="edit">
+            @csrf
             <h1>更新画面</h1>
             <p>更新したい企業名を入力してください</p>
             <tr>
@@ -13,16 +14,24 @@
                 <tr><th></th><td><input type="submit" name="send"></td></tr>
             </tr>
         </form>
-        @isset($update_sub)
+        @isset($sp_company)
+            {{--@foreach ($sp_company as $sp_companys)
+                <tr>
+                    <td>{{$sp_companys->No}}</td>
+                    <td>{{$sp_companys->company}}</td>
+                </tr>
+            @endforeach--}}
             <form method="POST" action="#" >
                 <table>
+                    @csrf
+                    <input type="hidden" name="id" value="{{$sp_company->No}}">
                     <tr>
-                    <td>採番</td>
-                    <td><input type="text" id="no"></td>
+                        <td>採番</td>
+                        <td><input type="text" id="no" name="job_no" value={{$sp_company->job_no}}></td>
                     </tr>
                     <tr>
-                    <td>会社名</td>
-                    <td><input type="text" id="company_name"></td>
+                        <td>会社名</td>
+                        <td><input type="text" name="company" id="company_name"></td>
                     </tr>
                     <tr>
                         <td>職種</td>

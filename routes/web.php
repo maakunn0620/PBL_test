@@ -25,5 +25,5 @@ Route::get('/add', [AddController::class, 'form']);
 Route::post('/add', [AddController::class, 'add']);
 
 //更新
-Route::get('/update', [UpdateController::class, 'index']);
-Route::post('/update', [UpdateController::class, 'Update_Search']);
+Route::get('/edit', [UpdateController::class, 'index']);
+Route::post('/edit', [UpdateController::class, 'edit_search']);
