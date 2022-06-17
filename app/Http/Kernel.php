@@ -1,4 +1,4 @@
-<?php //nishitani
+<?php
 
 namespace App\Http;
 
