@@ -30,5 +30,5 @@ Route::get('/showall', [SearchController::class, 'showall']);
 Route::post('/showall', [SearchController::class, 'showall']);
 Route::get('/add', [AddController::class, 'form']);
 Route::post('/add', [AddController::class, 'add']);
-
+Route::get('/search',[SearchController::class,'showsearch']);
 Route::get('/a', [SearchController::class, 'a']);
