@@ -14,7 +14,6 @@
     </body>
 
     @isset($job_no)
-    dd($job_no);
     @foreach ($job_no as $job_nos)
     <table border="1">
             <tr>
