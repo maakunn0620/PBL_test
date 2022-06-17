@@ -19,3 +19,10 @@ class SearchController extends Controller
         return view('search');
     }
 }
+    }
+    public function a()
+    {
+        $Department = new Department;
+        $job_no  = $Department->search();
+        return view('data_list',compact('job_no'));
+    }
