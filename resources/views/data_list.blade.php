@@ -7,17 +7,16 @@
 <body>
 @foreach ($job_nos as $job_no)
 <div class="1man">
-<table border="1">
+    <table border="1">
         <tr>
-            <th>$job_no->company</th>
+            <th>{{$job_nos->company}}</th>
         </tr>
         <tr>
-            <td>$job_no->jobs</td>
-            <td>$job_no-></td>
+            <td>{{$job_nos->jobs}}</td>
         </tr>
         <tr>
-            <td>$job_no->address</td>
-            <td>$job_no->job_department</td>
+            <td>{{$job_nos->address}}</td>
+            <td>{{$job_nos->department_name}}</td>
         </tr>
 </table>
 <button type=“button” onclick="this.delete">削除</button>

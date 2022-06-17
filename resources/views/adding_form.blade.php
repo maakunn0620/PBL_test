@@ -23,45 +23,45 @@
                 <td>都道府県</td>
                 <td>
                     <label>主要都道府県</label><br>
-                    <input type="checkbox" name="mainprefecture[]" id="東京">東京都<br>
-                    <input type="checkbox" name="mainprefecture[]" id="大阪">大阪府<br>
-                    <input type="checkbox" name="mainprefecture[]" id="兵庫">兵庫県<br>
-                    <input type="checkbox" name="mainprefecture[]" id="愛知">愛知県<br>
-                    <input type="checkbox" name="mainprefecture[]" id="北海道">北海道<br>
-                    <input type="checkbox" name="mainprefecture[]" id="神奈川">神奈川県<br>
-                    <input type="checkbox" name="mainprefecture[]" id="京都">京都府<br>
-                    <input type="checkbox" name="subprefecture[]" id="福岡">福岡<br>
+                    <input type="checkbox" name="prefecture[]" id="東京" value="13">東京都<br>
+                    <input type="checkbox" name="prefecture[]" id="大阪" value="27">大阪府<br>
+                    <input type="checkbox" name="prefecture[]" id="兵庫" value="28">兵庫県<br>
+                    <input type="checkbox" name="prefecture[]" id="愛知" value="23">愛知県<br>
+                    <input type="checkbox" name="prefecture[]" id="北海道" value="1">北海道<br>
+                    <input type="checkbox" name="prefecture[]" id="神奈川" value="14">神奈川県<br>
+                    <input type="checkbox" name="prefecture[]" id="京都" value="26">京都府<br>
+                    <input type="checkbox" name="prefecture[]" id="福岡" value="40">福岡<br>
                 </td>
                 <td>
                     <label>中四国</label><br>
-                    <input type="checkbox" name="subprefecture[]" id="岡山">岡山県<br>
-                    <input type="checkbox" name="subprefecture[]" id="広島">広島県<br>
-                    <input type="checkbox" name="subprefecture[]" id="鳥取">鳥取県<br>
-                    <input type="checkbox" name="subprefecture[]" id="島根">島根県<br>
-                    <input type="checkbox" name="subprefecture[]" id="山口">山口県<br>
-                    <input type="checkbox" name="subprefecture[]" id="徳島">徳島県<br>
-                    <input type="checkbox" name="subprefecture[]" id="香川">香川県<br>
-                    <input type="checkbox" name="subprefecture[]" id="愛媛">愛媛県<br>
-                    <input type="checkbox" name="subprefecture[]" id="高知">高知県<br>
+                    <input type="checkbox" name="prefecture[]" id="岡山" value="33">岡山県<br>
+                    <input type="checkbox" name="prefecture[]" id="広島" value="34">広島県<br>
+                    <input type="checkbox" name="prefecture[]" id="鳥取" value="31">鳥取県<br>
+                    <input type="checkbox" name="prefecture[]" id="島根" value="32">島根県<br>
+                    <input type="checkbox" name="prefecture[]" id="山口" value="35">山口県<br>
+                    <input type="checkbox" name="prefecture[]" id="徳島" value="36">徳島県<br>
+                    <input type="checkbox" name="prefecture[]" id="香川" value="37">香川県<br>
+                    <input type="checkbox" name="prefecture[]" id="愛媛" value="38">愛媛県<br>
+                    <input type="checkbox" name="prefecture[]" id="高知" value="39">高知県<br>
             </tr>
             <tr>
                 <td>求人学科</td>
                 <td>
-                    <input type="checkbox" name="department[]" id="指定なし">指定なし<br>
-                    <input type="checkbox" name="department[]" id="医療福祉">医療福祉学科<br>
-                    <input type="checkbox" name="department[]" id="診療情報管理士">診療情報管理士学科<br>
-                    <input type="checkbox" name="department[]" id="ホテル・ブライダル">ホテル・ブライダル学科<br>
-                    <input type="checkbox" name="department[]" id="経営アシスト">経営アシスト学科<br>
-                    <input type="checkbox" name="department[]" id="公務員">公務員学科<br>
-                    <input type="checkbox" name="department[]" id="公務員速修">公務員速修学科<br>
-                    <input type="checkbox" name="department[]" id="保育">保育学科<br>
-                    <input type="checkbox" name="department[]" id="情報スペシャリスト">情報スペシャリスト学科<br>
-                    <input type="checkbox" name="department[]" id="情報システム">情報システム学科<br>
-                    <input type="checkbox" name="department[]" id="ゲームクリエイター">ゲームクリエイター学科<br>
-                    <input type="checkbox" name="department[]" id="ゲームプログラマー">ゲームプログラマー学科<br>
-                    <input type="checkbox" name="department[]" id="データマーケター">データマーケター学科<br>
-                    <input type="checkbox" name="department[]" id="ネット・動画クリエイター">ネット・動画クリエイター学科<br>
-                    <input type="checkbox" name="department[]" id="CGデザイン">CGデザイン学科<br>
+                    <input type="checkbox" name="department[]" id="指定なし" value="15">指定なし<br>
+                    <input type="checkbox" name="department[]" id="医療福祉" value="1">医療福祉学科<br>
+                    <input type="checkbox" name="department[]" id="診療情報管理士" value="2">診療情報管理士学科<br>
+                    <input type="checkbox" name="department[]" id="ホテル・ブライダル" value="3">ホテル・ブライダル学科<br>
+                    <input type="checkbox" name="department[]" id="経営アシスト" value="4">経営アシスト学科<br>
+                    <input type="checkbox" name="department[]" id="公務員" value="5">公務員学科<br>
+                    <input type="checkbox" name="department[]" id="公務員速修" value="6">公務員速修学科<br>
+                    <input type="checkbox" name="department[]" id="保育" value="7">保育学科<br>
+                    <input type="checkbox" name="department[]" id="情報スペシャリスト" value="8">情報スペシャリスト学科<br>
+                    <input type="checkbox" name="department[]" id="情報システム" value="9">情報システム学科<br>
+                    <input type="checkbox" name="department[]" id="ゲームクリエイター" value="10">ゲームクリエイター学科<br>
+                    <input type="checkbox" name="department[]" id="ゲームプログラマー" value="11">ゲームプログラマー学科<br>
+                    <input type="checkbox" name="department[]" id="データマーケター" value="12">データマーケター学科<br>
+                    <input type="checkbox" name="department[]" id="ネット・動画クリエイター" value="13">ネット・動画クリエイター学科<br>
+                    <input type="checkbox" name="department[]" id="CGデザイン" value="14">CGデザイン学科<br>
 
                 </td>
             </tr>
