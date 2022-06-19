@@ -1,5 +1,3 @@
-
-<!Doctype html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -21,6 +19,10 @@
                 <table>
                     @csrf
                     @foreach ($sp_company as $sp_companys)
+                        <?php
+                            $jobs_array = explode(",", $sp_companys->area_no);
+                            $department_array = explode(",", $sp_companys->department_name);
+                        ?>
                         <input type="hidden" name="id" value="{{$sp_companys->No}}">
                         <tr>
                             <td>採番</td>
@@ -38,46 +40,46 @@
                             <td>都道府県</td>
                             <td>
                                 <label>主要都道府県</label><br>
-                                <input type="checkbox" id="東京">東京都<br>
-                                <input type="checkbox" id="大阪">大阪府<br>
-                                <input type="checkbox" id="兵庫">兵庫県<br>
-                                <input type="checkbox" id="愛知">愛知県<br>
-                                <input type="checkbox" id="北海道">北海道<br>
-                                <input type="checkbox" id="神奈川">神奈川県<br>
-                                <input type="checkbox" id="京都">京都府<br>
-                                <input type="checkbox" id="福岡">福岡<br>
+                                <input type="checkbox" id="東京" {{(in_array("13", $jobs_array)) ?'checked':'' }}>東京都<br>
+                                <input type="checkbox" id="大阪" {{(in_array("27", $jobs_array)) ?'checked':'' }}>大阪府<br>
+                                <input type="checkbox" id="兵庫" {{(in_array("28", $jobs_array)) ?'checked':'' }}>兵庫県<br>
+                                <input type="checkbox" id="愛知" {{(in_array("23", $jobs_array)) ?'checked':'' }}>愛知県<br>
+                                <input type="checkbox" id="北海道" {{(in_array("1", $jobs_array)) ?'checked':'' }}>北海道<br>
+                                <input type="checkbox" id="神奈川" {{(in_array("14", $jobs_array)) ?'checked':'' }}>神奈川県<br>
+                                <input type="checkbox" id="京都" {{(in_array("26", $jobs_array)) ?'checked':'' }}>京都府<br>
+                                <input type="checkbox" id="福岡" {{(in_array("40", $jobs_array)) ?'checked':'' }}>福岡<br>
                             </td>
                             <td>
                                 <label>中四国</label><br>
-                                <input type="checkbox" id="岡山">岡山県<br>
-                                <input type="checkbox" id="広島">広島県<br>
-                                <input type="checkbox" id="鳥取">鳥取県<br>
-                                <input type="checkbox" id="島根">島根県<br>
-                                <input type="checkbox" id="山口">山口県<br>
-                                <input type="checkbox" id="徳島">徳島県<br>
-                                <input type="checkbox" id="香川">香川県<br>
-                                <input type="checkbox" id="愛媛">愛媛県<br>
-                                <input type="checkbox" id="高知">高知県<br>
+                                <input type="checkbox" id="岡山" {{(in_array("33", $jobs_array)) ?'checked':'' }}>岡山県<br>
+                                <input type="checkbox" id="広島" {{(in_array("34", $jobs_array)) ?'checked':'' }}>広島県<br>
+                                <input type="checkbox" id="鳥取" {{(in_array("31", $jobs_array)) ?'checked':'' }}>鳥取県<br>
+                                <input type="checkbox" id="島根" {{(in_array("32", $jobs_array)) ?'checked':'' }}>島根県<br>
+                                <input type="checkbox" id="山口" {{(in_array("35", $jobs_array)) ?'checked':'' }}>山口県<br>
+                                <input type="checkbox" id="徳島" {{(in_array("36", $jobs_array)) ?'checked':'' }}>徳島県<br>
+                                <input type="checkbox" id="香川" {{(in_array("37", $jobs_array)) ?'checked':'' }}>香川県<br>
+                                <input type="checkbox" id="愛媛" {{(in_array("38", $jobs_array)) ?'checked':'' }}>愛媛県<br>
+                                <input type="checkbox" id="高知" {{(in_array("39", $jobs_array)) ?'checked':'' }}>高知県<br>
                             </td>
                         </tr>
                         <tr>
                             <td>求人学科</td>
                             <td>
                                 <input type="checkbox" id="指定なし">指定なし<br>
-                                <input type="checkbox" id="医療福祉">医療福祉学科<br>
-                                <input type="checkbox" id="診療情報管理士">診療情報管理士学科<br>
-                                <input type="checkbox" id="ホテル・ブライダル">ホテル・ブライダル学科<br>
-                                <input type="checkbox" id="経営アシスト">経営アシスト学科<br>
-                                <input type="checkbox" id="公務員">公務員学科<br>
-                                <input type="checkbox" id="公務員速修">公務員速修学科<br>
-                                <input type="checkbox" id="保育">保育学科<br>
-                                <input type="checkbox" id="情報スペシャリスト">情報スペシャリスト学科<br>
-                                <input type="checkbox" id="情報システム">情報システム学科<br>
-                                <input type="checkbox" id="ゲームクリエイター">ゲームクリエイター学科<br>
-                                <input type="checkbox" id="ゲームプログラマー">ゲームプログラマー学科<br>
-                                <input type="checkbox" id="データマーケター">データマーケター学科<br>
-                                <input type="checkbox" id="ネット・動画クリエイター">ネット・動画クリエイター学科<br>
-                                <input type="checkbox" id="CGデザイン">CGデザイン学科<br>
+                                <input type="checkbox" id="医療福祉" {{(in_array("医療福祉学科", $department_array)) ?'checked':'' }}>医療福祉学科<br>
+                                <input type="checkbox" id="診療情報管理士" {{(in_array("診療情報管理士学科", $department_array)) ?'checked':'' }}>診療情報管理士学科<br>
+                                <input type="checkbox" id="ホテル・ブライダル" {{(in_array("ホテル・ブライダル学科", $department_array)) ?'checked':'' }}>ホテル・ブライダル学科<br>
+                                <input type="checkbox" id="経営アシスト" {{(in_array("経営アシスト学科", $department_array)) ?'checked':'' }}>経営アシスト学科<br>
+                                <input type="checkbox" id="公務員" {{(in_array("公務員学科", $department_array)) ?'checked':'' }}>公務員学科<br>
+                                <input type="checkbox" id="公務員速修" {{(in_array("公務員速修学科", $department_array)) ?'checked':'' }}>公務員速修学科<br>
+                                <input type="checkbox" id="保育" {{(in_array("保育学科", $department_array)) ?'checked':'' }}>保育学科<br>
+                                <input type="checkbox" id="情報スペシャリスト" {{(in_array("情報スペシャリスト学科", $department_array)) ?'checked':'' }}>情報スペシャリスト学科<br>
+                                <input type="checkbox" id="情報システム" {{(in_array("情報システム学科", $department_array)) ?'checked':'' }}>情報システム学科<br>
+                                <input type="checkbox" id="ゲームクリエイター" {{(in_array("ゲームクリエイター学科", $department_array)) ?'checked':'' }}>ゲームクリエイター学科<br>
+                                <input type="checkbox" id="ゲームプログラマー" {{(in_array("ゲームプログラマー学科", $department_array)) ?'checked':'' }}>ゲームプログラマー学科<br>
+                                <input type="checkbox" id="データマーケター" {{(in_array("データマーケター学科", $department_array)) ?'checked':'' }}>データマーケター学科<br>
+                                <input type="checkbox" id="ネット・動画クリエイター" {{(in_array("ネット・動画クリエイター学科", $department_array)) ?'checked':'' }}>ネット・動画クリエイター学科<br>
+                                <input type="checkbox" id="CGデザイン" {{(in_array("CGデザイン学科", $department_array)) ?'checked':'' }}>CGデザイン学科<br>
                             </td>
                         </tr>
                         <tr>
