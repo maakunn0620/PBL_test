@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Job_area extends Model
 {
+    //use HasFactory;
     public function insert(array $jobarea){
         DB::insert("insert into job_area (job_no, area_no)
                     values (:job_no,:area_no)", $jobarea);
