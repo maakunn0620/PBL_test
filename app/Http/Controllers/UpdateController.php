@@ -13,7 +13,7 @@ class UpdateController extends Controller
     public function index() {
         $Job_vacansies = new Job_vacansies();
         $initial_lists = $Job_vacansies->m_list();
-        return view('update_form', compact('initial_lists'));
+        return view('data_list', compact('initial_lists'));
     }
 
     //押したボタンのIDをinitial_searchに送り、返り値をviewへ戻す

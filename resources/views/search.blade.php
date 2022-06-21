@@ -1,6 +1,4 @@
-<!doctype html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>求人検索Search</title>
@@ -29,6 +27,7 @@
                 if(this.value){
                     var target=document.getElementById(this.value);
                     target.style.display='inline';
+                    target.setAttribute("name", "area_no")
                 }
             }
         }
@@ -37,33 +36,34 @@
 </head>
 
 <body>
+<form method="POST" action="search" form style="margin: 10px">
+    @csrf
     <div class="pulldownset" style="margin-left: 400px;">
-        <form style="margin: 10px" method="post">
             <div style="float: left">業界</div>
             <div style="float: left">
                 <select name="industry">
-                    <option value="null1">-</option>
-                    <option value="medical">医療福祉</option>
-                    <option value="mti">診療情報管理士</option>
-                    <option value="hotel">ホテル・ブライダル</option>
-                    <option value="mana">経営アシスト</option>
-                    <option value="civil">公務員</option>
-                    <option value="civil-q">公務員速修</option>
-                    <option value="child">保育</option>
-                    <option value="jsp">情報スペシャリスト</option>
-                    <option value="jc">情報システム</option>
-                    <option value="create">ゲームクリエイター</option>
-                    <option value="program">ゲームプログラマー</option>
-                    <option value="data">データマーケター</option>
-                    <option value="net">ネット・動画クリエイター</option>
-                    <option value="cg">CGデザイン</option>
+                    <option value="null">指定なし</option>
+                    <option value="1">医療福祉</option>
+                    <option value="2">診療情報管理士</option>
+                    <option value="3">ホテル・ブライダル</option>
+                    <option value="4">経営アシスト</option>
+                    <option value="5">公務員</option>
+                    <option value="6">公務員速修</option>
+                    <option value="7">保育</option>
+                    <option value="8">情報スペシャリスト</option>
+                    <option value="9">情報システム</option>
+                    <option value="10">ゲームクリエイター</option>
+                    <option value="11">ゲームプログラマー</option>
+                    <option value="12">データマーケター</option>
+                    <option value="13">ネット・動画クリエイター</option>
+                    <option value="14">CGデザイン</option>
                 </select>
             </div>
 
             <!--勤務地のプルダウンメニュー-->
             <div style="float:left">勤務地</div>
             <select class="main">
-                <option value="local">地方</option>
+                <option value="null">なし</option>
                 <option value="1">北海道</option>
                 <option value="2">東北</option>
                 <option value="3">関東</option>
@@ -75,80 +75,82 @@
             <!--北海道地方-->
             <select id="1" class="subbox">
                 <option value="">■北海道</option>
-                <option value="hk">北海道</option>
+                <option value="1">北海道</option>
             </select>
 
             <!--東北地方-->
             <select id="2" class="subbox">
                 <option value="">■東北地方</option>
-                <option value="am">青森県</option>
-                <option value="it">岩手県</option>
-                <option value="at">秋田県</option>
-                <option value="mg">宮城県</option>
-                <option value="yg">山形県</option>
-                <option value="fs">福島県</option>
+                <option value="2">青森県</option>
+                <option value="3">岩手県</option>
+                <option value="4">宮城県</option>
+                <option value="5">秋田県</option>
+                <option value="6">山形県</option>
+                <option value="7">福島県</option>
             </select>
 
             <!--関東地方-->
             <select id="3" class="subbox">
                 <option value="">■関東地方</option>
-                <option value="ib">茨木県</option>
-                <option value="gm">群馬県</option>
-                <option value="st">埼玉県</option>
-                <option value="tb">千葉県</option>
-                <option value="tk">東京都</option>
-                <option value="kg">神奈川県</option>
+                <option value="9">茨木県</option>
+                <option value="10">群馬県</option>
+                <option value="11">埼玉県</option>
+                <option value="12">千葉県</option>
+                <option value="13">東京都</option>
+                <option value="14">神奈川県</option>
             </select>
 
             <!--中部地方-->
             <select id="4" class="subbox">
                 <option value="">■中部地方</option>
-                <option value="ng">新潟県</option>
-                <option value="tm">富山県</option>
-                <option value="ik">石川県</option>
-                <option value="hk">福井県</option>
-                <option value="ym">山梨県</option>
-                <option value="no">長野県</option>
-                <option value="gf">岐阜県</option>
-                <option value="so">静岡県</option>
-                <option value="ai">愛知県</option>
+                <option value="15">新潟県</option>
+                <option value="16">富山県</option>
+                <option value="17">石川県</option>
+                <option value="18">福井県</option>
+                <option value="19">山梨県</option>
+                <option value="20">長野県</option>
+                <option value="21">岐阜県</option>
+                <option value="22">静岡県</option>
+                <option value="23">愛知県</option>
             </select>
 
             <!--近畿地方-->
             <select id="5" class="subbox">
                 <option value="">■近畿地方</option>
-                <option value="me">三重県</option>
-                <option value="sg">滋賀県</option>
-                <option value="wy">和歌山県</option>
-                <option value="kt">京都府</option>
-                <option value="os">大阪府</option>
-                <option value="hg">兵庫県</option>
+                <option value="24">三重県</option>
+                <option value="25">滋賀県</option>
+                <option value="26">京都府</option>
+                <option value="27">大阪府</option>
+                <option value="28">兵庫県</option>
+                <option value="29">奈良県</option>
+                <option value="30">和歌山県</option>
             </select>
 
             <!--中国・四国地方-->
             <select id="6" class="subbox">
                 <option value="">■中国・四国地方</option>
-                <option value="oy">岡山県</option>
-                <option value="hs">広島県</option>
-                <option value="tt">鳥取県</option>
-                <option value="yt">山口県</option>
-                <option value="kw">香川県</option>
-                <option value="tk">徳島県</option>
-                <option value="eh">愛媛県</option>
-                <option value="kt">高知県</option>
+                <option value="31">鳥取県</option>
+                <option value="32">島根県</option>
+                <option value="33">岡山県</option>
+                <option value="34">広島県</option>
+                <option value="35">山口県</option>
+                <option value="36">徳島県</option>
+                <option value="37">香川県</option>
+                <option value="38">愛媛県</option>
+                <option value="39">高知県</option>
             </select>
 
             <!--九州地方-->
-            <select id="7" class="subbox">
+            <select id="7" class="subbox" >
                 <option value="">■九州地方</option>
-                <option value="fo">福岡県</option>
-                <option value="sg">佐賀県</option>
-                <option value="ns">長崎県</option>
-                <option value="oi">大分県</option>
-                <option value="km">熊本県</option>
-                <option value="mz">宮崎県</option>
-                <option value="ks">鹿児島県</option>
-                <option value="on">沖縄県</option>
+                <option value="40">福岡県</option>
+                <option value="41">佐賀県</option>
+                <option value="42">長崎県</option>
+                <option value="43">熊本県</option>
+                <option value="44">大分県</option>
+                <option value="45">宮崎県</option>
+                <option value="46">鹿児島県</option>
+                <option value="47">沖縄県</option>
             </select>
 
             <div style="margin-top: 2px;">
@@ -159,13 +161,12 @@
                 </div>
             </div>
     </div>
+    <h1> special thakns Takumi Yokoyama</h1>
 
     <div style="margin-left: 1000px;">
-        <button type="submit">検索</button>
+    <input type="submit" value="検索">
     </div>
-
 </form>
-
 </body>
 
 </html>
