@@ -35,5 +35,5 @@ Route::post('/add', [AddController::class, 'add']);
 //更新
 Route::get('/edit', [UpdateController::class, 'index']);
 Route::post('/edit', [UpdateController::class, 'edit_search']);
-Route::post('/update', [UpdateController::class, 'edit_update']);
-Route::post('/editor', [UpdateController::class, 'editor_decision']);
+Route::get('/editor/{id}', [UpdateController::class, 'edit_page'])->name('edit.page');
+Route::post('editor/update', [UpdateController::class, 'edit_update']);
