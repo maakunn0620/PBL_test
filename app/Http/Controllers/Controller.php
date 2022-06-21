@@ -11,7 +11,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function top(){
+    /*public function top(){
         return view('top');
     }
 
@@ -19,11 +19,7 @@ class Controller extends BaseController
         return view('list');
     }
 
-    public function search(){
-        return view('search');
-    }
-
     public function data_list(){
         return view('data_list');
-    }
+    }*/
 }

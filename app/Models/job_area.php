@@ -12,5 +12,7 @@ class Job_area extends Model
         DB::insert("insert into job_area (job_no, area_no)
                     values (:job_no,:area_no)", $jobarea);
     }
+    public function init_update_a(string $init_no){
+        DB::delete("DELETE FROM job_area WHERE job_no = ".$init_no);
+    }
 }
-

@@ -10,7 +10,9 @@ use App\Models\job_area;
 class AddController extends Controller
 {
     public function form(){
-        return view("adding_form");
+        $Job_vacansies = new Job_vacansies;
+        $getno = $Job_vacansies->getId();
+        return view("adding_form",compact('getno'));
     }
     public function add (Request $request){
         //job_vacanciesへの追加
