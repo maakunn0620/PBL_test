@@ -9,7 +9,9 @@
         <table>
             <tr>
               <td>採番</td>
-              <td><input type="text" name="job_no" id="no"></td>
+              @foreach ($getno as $get_no)
+              <td><input type="text" name="job_no" id="no" value="{{$get_no->job_no}}"></td>
+              @endforeach
             </tr>
             <tr>
               <td>会社名</td>
@@ -70,7 +72,7 @@
                 <td><input type="text" name="pdf" id="pdf"></td>
             </tr>
             <tr>
-                <td>所在地</td>
+                <td>本社所在地</td>
                 <td><input type="text" name="address" id="address"></td>
             </tr>
             <tr>

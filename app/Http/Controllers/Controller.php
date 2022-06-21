@@ -19,10 +19,6 @@ class Controller extends BaseController
         return view('list');
     }
 
-    public function search(){
-        return view('search');
-    }
-
     public function data_list(){
         return view('data_list');
     }
