@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AddController;
+use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Controller;
 
@@ -28,6 +29,10 @@ Route::get('/showall', [SearchController::class, 'showall']);
 Route::post('/showall', [SearchController::class, 'showall']);
 Route::get('/add', [AddController::class, 'form']);
 Route::post('/add', [AddController::class, 'add']);
+Route::get('/edit', [UpdateController::class, 'index']);
+Route::post('/edit', [UpdateController::class, 'edit_search']);
+Route::get('/editor/{id}', [UpdateController::class, 'edit_page'])->name('edit.page');
+Route::post('editor/update', [UpdateController::class, 'edit_update']);
 Route::get('/search',[SearchController::class,'showsearch']);
 Route::post('/search',[SearchController::class,'search']);
 Route::get('/a', [SearchController::class, 'a']);
