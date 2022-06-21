@@ -4,40 +4,6 @@
         <title>新規登録</title>
     </head>
     <body>
-        <h1>更新管理画面</h1>
-        @isset($initial_lists)
-            <form method="POST" action="edit">
-                @csrf
-                <p>更新したい企業名を入力してください</p>
-                <tr>
-                <td>企業名</td>
-                <td><input type="text" name="company_name"></td>
-                <input type="submit" value="検索">
-                </tr>
-            </form>
-            <form method="POST" action="editor">
-                @csrf
-                @foreach ($initial_lists as $initial_list)
-                <table border="1">
-                        <input type="hidden" name="id" value="{{$initial_list->No}}">
-                        <tr>
-                            <th>{{$initial_list->company}}</th>
-                        </tr>
-                        <tr>
-                            <td>{{$initial_list->jobs}}</td>
-                        </tr>
-                        <tr>
-                            <td>{{$initial_list->address}}</td>
-                            <td>{{$initial_list->department_name}}</td>
-                        </tr>
-                        <th>
-                            <td><a href="{{ route('edit.page', $initial_list->No) }}">編集</a>
-                                <input type="submit" name="delete" value="削除"></td>
-                        </th>
-                </table>
-                @endforeach
-            </form>
-        @endisset
         @isset($sp_company)
             <form method="POST" action="update">
                 <table>
@@ -89,7 +55,7 @@
                         <tr>
                             <td>求人学科</td>
                             <td>
-                                <input type="checkbox" name="department[]" id="指定なし" value="15">指定なし<br>
+                                <input type="checkbox" name="department[]" id="指定なし" value="15" {{(in_array("指定なし", $department_array)) ?'checked':'' }}>指定なし<br>
                                 <input type="checkbox" name="department[]" id="医療福祉" value="1" {{(in_array("医療福祉学科", $department_array)) ?'checked':'' }}>医療福祉学科<br>
                                 <input type="checkbox" name="department[]" id="診療情報管理士" value="2" {{(in_array("診療情報管理士学科", $department_array)) ?'checked':'' }}>診療情報管理士学科<br>
                                 <input type="checkbox" name="department[]" id="ホテル・ブライダル" value="3" {{(in_array("ホテル・ブライダル学科", $department_array)) ?'checked':'' }}>ホテル・ブライダル学科<br>

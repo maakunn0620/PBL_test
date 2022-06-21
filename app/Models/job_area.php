@@ -15,4 +15,7 @@ class Job_area extends Model
     public function init_update_a(string $init_no){
         DB::delete("DELETE FROM job_area WHERE job_no = ".$init_no);
     }
+    public function jobarea_delete(string $id) {
+        DB::delete("DELETE FROM job_area where job_no =".$id);
+    }
 }
