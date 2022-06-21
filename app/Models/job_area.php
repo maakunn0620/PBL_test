@@ -13,4 +13,3 @@ class Job_area extends Model
                     values (:job_no,:area_no)", $jobarea);
     }
 }
-
