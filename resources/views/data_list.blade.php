@@ -1,46 +1,42 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <form method="POST" action="a">
-            @csrf
-            <title>企業データ一覧</title>
-        </from>
+        <meta charset="utf-8">
+        <title>新規登録</title>
     </head>
-<body>
-
-<h1>企業データ一覧</h1>
-
-@isset($job_no)
-@foreach ($job_no as $job_nos)
-<div class="1man">
-<table border="2">
-    <tr>
-        <th>{{$job_nos->company}}</th>
-    </tr>
-    <tr>
-        <td>{{$job_nos->jobs}}</td>
-        <td>{{$job_nos->address}}</td>
-        <td><button type="submit">更新</button></td>
-    </tr>
-    <tr>
-        <td>{{$job_nos->department_name}}</td>
-        <td><button type="submit">もっと見る</button></td>
-        <td><button type="submit">削除</button></td>
-    </tr>
-</table>
-</div>
-@endforeach
-
-<script>
-    function deletePost(e) {
-    'use strict';
-    
-    if (confirm('本当に削除していいですか?')) {
-    document.getElementById('form_' + e.dataset.id).submit();
-    }
-    }
-</script>
-
-@endisset
-</body>
+    <body>
+        <h1>更新管理画面</h1>
+        @isset($initial_lists)
+            <form method="POST" action="edit">
+                @csrf
+                <p>更新したい企業名を入力してください</p>
+                <tr>
+                <td>企業名</td>
+                <td><input type="text" name="company_name"></td>
+                <input type="submit" value="検索">
+                </tr>
+            </form>
+            <form method="POST" action="editor">
+                @csrf
+                @foreach ($initial_lists as $initial_list)
+                <table border="1">
+                        <input type="hidden" name="id" value="{{$initial_list->No}}">
+                        <tr>
+                            <th>{{$initial_list->company}}</th>
+                        </tr>
+                        <tr>
+                            <td>{{$initial_list->jobs}}</td>
+                        </tr>
+                        <tr>
+                            <td>{{$initial_list->address}}</td>
+                            <td>{{$initial_list->department_name}}</td>
+                        </tr>
+                        <th>
+                            <td><a href="{{ route('edit.page', $initial_list->No) }}">編集</a>
+                            <td><a href="{{ route('delete.page', $initial_list->job_no) }}">削除</a>
+                        </th>
+                </table>
+                @endforeach
+            </form>
+        @endisset
+    </body>
 </html>

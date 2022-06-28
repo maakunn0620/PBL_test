@@ -125,4 +125,9 @@ class Department extends Model
     public function init_update_d(string $init_no){
         DB::delete("DELETE FROM department WHERE job_no = ".$init_no);
     }
+
+    //ただの削除
+    public function department_delete(string $id) {
+        DB::delete("DELETE FROM department where job_no =".$id);
+    }
 }

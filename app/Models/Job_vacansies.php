@@ -13,10 +13,10 @@ class Job_vacansies extends Model
         DB::insert('insert into job_vacacies (job_no, company, pdf, cment, address, jobs, company_url)
         values(:job_no, :company, :pdf, :comment, :address, :jobs, :company_url)', $vacansies);
     }
-  
+
     //更新管理画面の初期一覧表示
     public function m_list(){
-        $list = DB::select("select No, company, jobs, address, GROUP_CONCAT(distinct department_name) as department_name from job_vacacies A inner join department B ON A.job_no = B.job_no inner join department_master C ON C.job_department = B.job_department group by B.job_no;");
+        $list = DB::select("select No, A.job_no, company, jobs, address, GROUP_CONCAT(distinct department_name) as department_name from job_vacacies A inner join department B ON A.job_no = B.job_no inner join department_master C ON C.job_department = B.job_department group by B.job_no;");
         return $list;
     }
     //更新ボタンを押した際の初期表示
@@ -44,11 +44,17 @@ class Job_vacansies extends Model
         DB::update("UPDATE job_vacacies
         SET job_no = :job_no, company = :company, pdf = :pdf, cment = :comment, address = :address, jobs = :jobs, company_url = :company_url
         WHERE No = :id", $param);
+    }
 
     public function getId(){
        $getno = DB::select("SELECT MIN(job_no + 1) AS job_no
        FROM job_vacacies
        WHERE (job_no + 1) NOT IN (SELECT job_no FROM job_vacacies) ");
        return $getno;
+    }
+
+    //削除
+    public function vacansies_delete(string $id) {
+        DB::delete("DELETE FROM job_vacacies where job_no = ".$id);
     }
 }
