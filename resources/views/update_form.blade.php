@@ -1,11 +1,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>新規登録</title>
+        <title>更新管理</title>
     </head>
     <body>
         @isset($sp_company)
             <form method="POST" action="update">
+                <input type="button" onclick="window.history.back();" value="直前のページに戻る">
                 <table>
                     @csrf
                     @foreach ($sp_company as $sp_companys)

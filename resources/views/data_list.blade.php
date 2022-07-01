@@ -4,8 +4,10 @@
         <title>新規登録</title>
     </head>
     <body>
+        @if (session('message'))
+            <span>{{ session('message') }}</span>
+        @endif
         <h1>更新管理画面</h1>
-        @isset($initial_lists)
             <form method="POST" action="edit">
                 @csrf
                 <p>更新したい企業名を入力してください</p>
@@ -15,6 +17,7 @@
                 <input type="submit" value="検索">
                 </tr>
             </form>
+        @if(isset($initial_lists))
             <form method="POST" action="editor">
                 @csrf
                 @foreach ($initial_lists as $initial_list)
@@ -37,6 +40,8 @@
                 </table>
                 @endforeach
             </form>
-        @endisset
+        @else
+            <h2>検索対象が見つかりませんでした</h2>
+        @endif
     </body>
 </html>

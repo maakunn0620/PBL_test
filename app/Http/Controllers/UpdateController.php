@@ -6,6 +6,7 @@ use App\Models\Job_vacansies;
 use App\Models\Department;
 use App\Models\Job_area;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Session;
 
 class UpdateController extends Controller
 {
@@ -32,10 +33,13 @@ class UpdateController extends Controller
 
     //update_formからの入力企業名を元に情報を引っ張ってくる
     public function edit_search(Request $request){
-        $param = ['company_name' => $request->company_name];
-        $job_vacansies = new Job_vacansies();
-        $initial_lists  = $job_vacansies->DB_search($param);
-        return view('update_form',compact('initial_lists'));
+        if(isset($request->company_name)){
+            $job_vacansies = new Job_vacansies();
+            $initial_lists  = $job_vacansies->DB_search($request->company_name);
+            return view('data_list',compact('initial_lists'));
+        } else {
+            return view('data_list', ['initial_lists' => null]);
+        }
     }
 
     //変更内容を適応する
@@ -84,6 +88,6 @@ class UpdateController extends Controller
             );
             $jobareaDB->insert($jobarea);
         }
-        return redirect("/edit");
+        return redirect('/edit')->with('message', '更新が完了しました');
     }
 }
