@@ -17,7 +17,7 @@
                 <input type="submit" value="検索">
                 </tr>
             </form>
-        @if(isset($initial_lists))
+        @if(isset( $initial_lists ))
             <form method="POST" action="editor">
                 @csrf
                 @foreach ($initial_lists as $initial_list)
