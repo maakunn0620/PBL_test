@@ -5,7 +5,9 @@
     </head>
     <body>
         @if (session('message'))
-            <span>{{ session('message') }}</span>
+            <div>
+                <script type="text/javascript"> alert("更新が完了しました")</script>
+            </div>
         @endif
         <h1>更新管理画面</h1>
             <form method="POST" action="edit">
