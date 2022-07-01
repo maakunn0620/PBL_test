@@ -32,10 +32,13 @@ class UpdateController extends Controller
 
     //update_formからの入力企業名を元に情報を引っ張ってくる
     public function edit_search(Request $request){
-        $param = ['company_name' => $request->company_name];
-        $job_vacansies = new Job_vacansies();
-        $initial_lists  = $job_vacansies->DB_search($param);
-        return view('update_form',compact('initial_lists'));
+        if(isset($request->company_name)) {
+            $job_vacansies = new Job_vacansies();
+            $initial_lists  = $job_vacansies->DB_search($request->company_name);
+            return view('data_list',compact('initial_lists'));
+        } else {
+            return view('data_list', ['initial_lists'=>null]);
+        }
     }
 
     //変更内容を適応する
