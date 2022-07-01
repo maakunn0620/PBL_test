@@ -4,6 +4,11 @@
         <title>新規登録</title>
     </head>
     <body>
+        @if (session('message'))
+            <div>
+                <script type="text/javascript"> alert("更新が完了しました")</script>
+            </div>
+        @endif
         <h1>更新管理画面</h1>
             <form method="POST" action="edit">
                 @csrf
@@ -14,7 +19,8 @@
                 <input type="submit" value="検索">
                 </tr>
             </form>
-        @if(isset( $initial_lists ))
+
+        @if(!empty($initial_lists))
             <form method="POST" action="editor">
                 @csrf
                 @foreach ($initial_lists as $initial_list)
