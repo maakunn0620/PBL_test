@@ -31,13 +31,13 @@ class Job_vacansies extends Model
         return $initial_record;
     }
     //
-    public function DB_search(array $param){
-        $update_sub = DB::select("select No, company, jobs, address, GROUP_CONCAT(distinct department_name) as department_name
+    public function DB_search(string $param){
+        $update_sub = DB::select("select No, A.job_no, company, jobs, address, GROUP_CONCAT(distinct department_name) as department_name
         from job_vacacies A
         inner join department B ON A.job_no = B.job_no
         inner join department_master C ON C.job_department = B.job_department
         group by B.job_no
-        having company = :company_name;", $param);
+        having company like '%".$param."%';");
         return $update_sub;
     }
     public function DB_update(array $param){
