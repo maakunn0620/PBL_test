@@ -21,6 +21,6 @@ class DeleteController extends Controller
         $jobareaDB->jobarea_delete($id);
         $Job_vacansies->vacansies_delete($id);
 
-        return redirect("/edit");
+        return redirect('/edit')->with('delete_message', '削除');
     }
 }

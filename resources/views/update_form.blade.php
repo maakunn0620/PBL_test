@@ -6,7 +6,7 @@
     <body>
         @isset($sp_company)
             <form method="POST" action="update">
-                <input type="button" onclick="window.history.back();" value="直前のページに戻る">
+                <input type="button" onclick="window.history.back();" value="一覧へ戻る">
                 <table>
                     @csrf
                     @foreach ($sp_company as $sp_companys)

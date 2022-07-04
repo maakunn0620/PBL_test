@@ -4,12 +4,18 @@
         <title>新規登録</title>
     </head>
     <body>
-        @if (session('message'))
+        @if (session('update_message'))
             <div>
                 <script type="text/javascript"> alert("更新が完了しました")</script>
             </div>
         @endif
-        <h1>更新管理画面</h1>
+        @if (session('delete_message'))
+            <div>
+                <script type="text/javascript"> alert("対象の削除が完了しました")</script>
+            </div>
+        @endif
+        <h1>企業データ一覧画面</h1>
+        <input type="button" onclick="location.href='./manegement_top'" value="管理画面トップへ">
             <form method="POST" action="edit">
                 @csrf
                 <p>更新したい企業名を入力してください</p>

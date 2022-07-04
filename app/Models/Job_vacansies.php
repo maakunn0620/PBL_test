@@ -30,7 +30,7 @@ class Job_vacansies extends Model
         HAVING No = ".$id.";");
         return $initial_record;
     }
-    //
+    //名前検索時
     public function DB_search(string $param){
         $update_sub = DB::select("select No, A.job_no, company, jobs, address, GROUP_CONCAT(distinct department_name) as department_name
         from job_vacacies A
@@ -40,12 +40,13 @@ class Job_vacansies extends Model
         having company like '%".$param."%';");
         return $update_sub;
     }
+    //更新時処理
     public function DB_update(array $param){
         DB::update("UPDATE job_vacacies
         SET job_no = :job_no, company = :company, pdf = :pdf, cment = :comment, address = :address, jobs = :jobs, company_url = :company_url
         WHERE No = :id", $param);
     }
-
+    //途中に空いている番号か連番を持ってくる。
     public function getId(){
        $getno = DB::select("SELECT MIN(job_no + 1) AS job_no
        FROM job_vacacies
