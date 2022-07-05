@@ -115,6 +115,20 @@ class Department extends Model
                 $detailjob = DB::select($sql);
                 return $detailjob;
             }
+
+             //条件　学科と職種と勤務地
+            if($jobsearch['area_no'] == null and $jobsearch['jobs'] == null and $jobsearch['department_no'] == "null"){
+                $department_no = $jobsearch['department_no'];
+                $jobs = $jobsearch['jobs'];
+                $area_no = $jobsearch['area_no'];
+                $sql = "select No, company, jobs, address, GROUP_CONCAT(distinct department_name) as department_name
+                                            from job_vacacies A
+                                            inner join department B ON A.job_no = B.job_no
+                                            inner join department_master C ON C.job_department = B.job_department
+                                            group by B.job_no;";
+                $detailjob = DB::select($sql);
+                return $detailjob;
+            }
     }
 
     public function insert(array $department){

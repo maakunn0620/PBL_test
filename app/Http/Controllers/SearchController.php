@@ -24,6 +24,9 @@ class SearchController extends Controller
         );
         $Department = new Department;
         $job_no = $Department->detailsearch($jobsearch);
+        if(empty($job_no)){
+            return redirect('search')->with('flash_message','見つかりませんでした。');
+        }
         return view('list',compact('job_no'));
     }
 }

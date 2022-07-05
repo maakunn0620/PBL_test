@@ -36,6 +36,11 @@
 </head>
 
 <body>
+@if (session('flash_message'))
+    <div class="flash_message">
+        <script type="text/javascript"> alert("お探しの求人は見つかりませんでした。\n他の検索条件を試してみてください。"); </script>
+    </div>
+@endif
 <form method="POST" action="search" form style="margin: 10px">
     @csrf
     <div class="pulldownset" style="margin-left: 400px;">
