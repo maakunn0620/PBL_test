@@ -15,7 +15,7 @@ class AddController extends Controller
         return view("adding_form",compact('getno'));
     }
     public function add (Request $request){
-        //job_vacanciesへの追加を実行
+        //job_vacanciesへの追加
         $jobvacancies = array(
             'job_no' => $request->input("job_no"),
             'company' => $request->input("company"),
