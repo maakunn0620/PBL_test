@@ -18,6 +18,8 @@ class LoginController extends Controller
         foreach($results as $result){
             if($user_id == $result->user_id and $password == $result->password){
                 return view("manegement_top");
+            }else{
+                return redirect('login')->with('flash_message','失敗しました。');
             }
         }
     }
