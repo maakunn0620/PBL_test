@@ -88,6 +88,6 @@ class UpdateController extends Controller
             );
             $jobareaDB->insert($jobarea);
         }
-        return redirect('/edit')->with('message', '更新が完了しました');
+        return redirect('/edit')->with('update_message', '更新');
     }
 }
