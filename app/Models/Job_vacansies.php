@@ -46,7 +46,7 @@ class Job_vacansies extends Model
         SET job_no = :job_no, company = :company, pdf = :pdf, cment = :comment, address = :address, jobs = :jobs, company_url = :company_url
         WHERE No = :id", $param);
     }
-    //途中に空いている番号か連番を持ってくる。
+    //途中に空いている番号か連番を持ってくる
     public function getId(){
        $getno = DB::select("SELECT MIN(job_no + 1) AS job_no
        FROM job_vacacies
