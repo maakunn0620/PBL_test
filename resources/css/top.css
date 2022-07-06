@@ -1,0 +1,111 @@
+.containe{
+    text-align: center;
+    top:60%;
+    left: 40%;
+    width: 300px;
+    height: 350px;
+    position: relative;
+}
+.example{
+    position: absolute;
+    top:60%;
+    left:30%;
+    width: auto;
+    padding:0;
+    margin:0;
+    background:none;
+    border:0;
+    font-size:0;
+    line-height:0;
+    overflow:visible;
+    cursor:pointer;
+}
+.example2{
+    position: absolute;
+    top:60%;
+    left:55%;
+    width: auto;
+    padding:0;
+    margin:0;
+    background:none;
+    border:0;
+    font-size:0;
+    line-height:0;
+    overflow:visible;
+    cursor:pointer;
+}
+.example3{
+    position: absolute;
+    top:80%;
+    left:40%;
+    width: auto;
+    padding:0;
+    margin:0;
+    background:none;
+    border:0;
+    font-size:0;
+    line-height:0;
+    overflow:visible;
+    cursor:pointer;
+}
+.example4{
+    position: absolute;
+        top:0;
+        left:90%;
+        font-size:20px;
+        padding:0;
+        margin:0;
+}
+
+@media screen and (max-width:1024px){
+    .containe{
+        text-align: center;
+        top:60%;
+        left: 35%;
+        width: 300px;
+        height: 350px;
+        position: relative;
+    }
+    .example{
+        position: absolute;
+        top:20%;
+        left:40%;
+        width:auto;
+        padding:0;
+        margin:0;
+        background:none;
+        border:0;
+        font-size:0;
+        line-height:0;
+        overflow:visible;
+        cursor:pointer;
+    }
+    .example2{
+        position: absolute;
+        top:30%;
+        left:40%;
+        width: auto;
+        padding:0;
+        margin:0;
+        background:none;
+        border:0;
+        font-size:0;
+        line-height:0;
+        overflow:visible;
+        cursor:pointer;
+    }
+    .example3{
+        position: absolute;
+        top:40%;
+        left:37%;
+        width: auto;
+        padding:0;
+        margin:0;
+        background:none;
+        border:0;
+        font-size:0;
+        line-height:0;
+        overflow:visible;
+        cursor:pointer;
+    }
+}

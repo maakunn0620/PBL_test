@@ -1,37 +1,36 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>求人検索Search</title>
-    <div style="text-align: right">
-        <img src="csr.jpeg" width="100%" height="350px">
-    </div>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>求人検索</title>
+    <link href="../resources/css/search.css" rel="stylesheet">
     <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded',function(){
-        //2回目以降のプルダウンを全て非表示
-        var sub=document.getElementsByClassName("subbox");
-        for(var i=0; i<sub.length; i++){
-            sub[i].style.display='none';
-        }
-        //全てのプルダウンメニューセットごとに処理
-        var main=document.getElementsByClassName('pulldownset');
-        for(var i=0; i<main.length; i++){
-            var mainSelect=main[i].getElementsByClassName("main");
-            mainSelect[0].onchange=function(){
-                //同じ親要素に含まれているすべての2階層目(サブ)要素を消す
-                var sub=this.parentNode.getElementsByClassName("subbox");
-                for(var j=0; j<sub.length; j++){
-                    sub[j].style.display='none';
-                }
+        document.addEventListener('DOMContentLoaded',function(){
+            //2回目以降のプルダウンを全て非表示
+            var sub=document.getElementsByClassName("subbox");
+            for(var i=0; i<sub.length; i++){
+                sub[i].style.display='none';
+            }
+            //全てのプルダウンメニューセットごとに処理
+            var main=document.getElementsByClassName('pulldownset');
+            for(var i=0; i<main.length; i++){
+                var mainSelect=main[i].getElementsByClassName("main");
+                mainSelect[0].onchange=function(){
+                    //同じ親要素に含まれているすべての2階層目(サブ)要素を消す
+                    var sub=this.parentNode.getElementsByClassName("subbox");
+                    for(var j=0; j<sub.length; j++){
+                        sub[j].style.display='none';
+                    }
 
-                //指定された2階層目要素だけを表示する
-                if(this.value){
-                    var target=document.getElementById(this.value);
-                    target.style.display='inline';
-                    target.setAttribute("name", "area_no")
+                    //指定された2階層目要素だけを表示する
+                    if(this.value){
+                        var target=document.getElementById(this.value);
+                        target.style.display='inline';
+                        target.setAttribute("name", "area_no")
+                    }
                 }
             }
-        }
-    });
+        });
     </script>
 </head>
 
@@ -41,11 +40,12 @@
         <script type="text/javascript"> alert("お探しの求人は見つかりませんでした。\n他の検索条件を試してみてください。"); </script>
     </div>
 @endif
-<form method="POST" action="search" form style="margin: 10px">
+<img src="../resources/imgs/求人票検索.png" alt="求人票検索" class="kyu-jin">
+{{--<span class="pulldownset">--}}
+<form method="POST" action="search">
     @csrf
-    <div class="pulldownset" style="margin-left: 400px;">
-            <div style="float: left">業界</div>
-            <div style="float: left">
+        <span class="pulldownset">
+            <div class="search gyo-kai">業界</div>
                 <select name="industry">
                     <option value="null">指定なし</option>
                     <option value="1">医療福祉</option>
@@ -65,8 +65,11 @@
                 </select>
             </div>
 
+            <div class="search job">職種</div>
+            <input type="text" name="jobtype">
+
             <!--勤務地のプルダウンメニュー-->
-            <div style="float:left">勤務地</div>
+            <div class="search area">勤務地</div>
             <select class="main">
                 <option value="null">なし</option>
                 <option value="1">北海道</option>
@@ -157,21 +160,16 @@
                 <option value="46">鹿児島県</option>
                 <option value="47">沖縄県</option>
             </select>
-
-            <div style="margin-top: 2px;">
-                <br style="clear: both">
-                <div style="float:left">職種</div>
-                <div style="float:left">
-                    <input type="text" name="jobtype">
-                </div>
-            </div>
-    </div>
-    <h1> special thakns Takumi Yokoyama</h1>
-
-    <div style="margin-left: 1000px;">
+        </span>
+    <!-- <p> special thakns Takumi Yokoyama</p> -->
+    <div>
+        <br>
     <input type="submit" value="検索">
     </div>
 </form>
 </body>
+<a href="./top">
+    <p class="back">←TOPへ戻る</p>
+</a>
 
 </html>

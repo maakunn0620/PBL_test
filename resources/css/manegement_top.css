@@ -1,0 +1,136 @@
+body {
+     background-color: #DCEFE4;
+    }
+    .containe{
+        top:60%;
+        left:42%;
+        text-align: center;
+        width: 300;
+        height: 350px;
+        position: relative;
+    }
+    .container img{
+        width:100%;
+        text-align: center;
+    }
+    .example{
+        position: absolute;
+        top:60%;
+        left: 30%;
+        width: auto;
+        padding:0;
+        margin:0;
+        background:none;
+        border:0;
+        font-size:0;
+        line-height:0;
+        overflow:visible;
+        cursor:pointer;
+    }
+    .example2{
+        position: absolute;
+        top:60%;
+        left:55%;
+        width: auto;
+        padding:0;
+        margin:0;
+        background:none;
+        border:0;
+        font-size:0;
+        line-height:0;
+        overflow:visible;
+        cursor:pointer;
+    }
+    .example3{
+        position: absolute;
+        top:60%;
+        left:65%;
+        width: auto;
+        padding:0;
+        margin:0;
+        background:none;
+        border:0;
+        font-size:0;
+        line-height:0;
+        overflow:visible;
+        cursor:pointer;
+    }
+    .example4{
+        position: absolute;
+        top:80%;
+        left:44%;
+        width: auto;
+        padding:0;
+        margin:0;
+        background:none;
+    }
+
+
+@media screen and (max-width: 1024px){
+    body {
+        background-color: #DCEFE4;
+      }
+    .containe{
+        top:60%;
+        left:42%;
+        text-align: center;
+        width: 300;
+        height: 350px;
+        position: relative;
+    }
+    .container img{
+        width:100%;
+        text-align: center;
+    }
+    .example{
+        position: absolute;
+        top:20%;
+        left:44%;
+        width: auto;
+        padding:0;
+        margin:0;
+        background:none;
+        border:0;
+        font-size:0;
+        line-height:0;
+        overflow:visible;
+        cursor:pointer;
+    }
+    .example2{
+        position: absolute;
+        top:25%;
+        left: 44%;
+        width: auto;
+        padding:0;
+        margin:0;
+        background:none;
+        border:0;
+        font-size:0;
+        line-height:0;
+        overflow:visible;
+        cursor:pointer;
+    }
+    .example3{
+        position: absolute;
+        top: 30%;
+        left:44%;
+        width: auto;
+        padding:0;
+        margin:0;
+        background:none;
+        border:0;
+        font-size:0;
+        line-height:0;
+        overflow:visible;
+        cursor:pointer;
+    }
+    .example4{
+        position: absolute;
+        top:35%;
+        left:44%;
+        width: auto;
+        padding:0;
+        margin:0;
+        background:none;
+    }
+}
