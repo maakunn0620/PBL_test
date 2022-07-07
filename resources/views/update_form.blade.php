@@ -10,7 +10,6 @@
         @isset($sp_company)
         <form method="POST" action="update">
             @csrf
-            <button type="button" onclick="location.href='../edit'">前に戻る</button>
             <div class="warning_alert">
                 @if(count($errors) > 0)
                 <ul>
@@ -161,6 +160,7 @@
                     @endforeach
                 </table>
                 <input type="submit" class="bt" value="更新"></td>
+                <button type="button" class="bt" onclick="location.href='../edit'">前に戻る</button>
         @endisset
         </form>
     </body>

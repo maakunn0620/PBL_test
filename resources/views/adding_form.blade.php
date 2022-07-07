@@ -6,7 +6,7 @@
         <title>新規登録</title>
     </head>
     <body>
-        <h1 class="index">新規企業情報入力</h1>
+        <p class="index">新規企業情報入力</p>
         <form method="POST" action="add">
         <div class="warning_alert">
             @if(count($errors) > 0)
@@ -152,8 +152,8 @@
                 <td><input type="text" size="40" name="comment" id="cment"></td>
             </tr>
           </table>
-          <button type="submit" calss = "bt">追加</button>
-          <button type="button" onclick="location.href='./manegement_top'">管理者画面へ</button>
+          <input type="submit" class="bt" value="追加"></td>
+          <button type="button" class="bt" onclick="location.href='./manegement_top'">管理者画面へ</button>
     </form>
     </body>
 </html>
