@@ -7,6 +7,11 @@
 
     </head>
     <body>
+        @if (session('adding_message'))
+            <div>
+                <script type="text/javascript"> alert("求人票の追加が完了しました")</script>
+            </div>
+        @endif
         <div>
             <img src="../resources/imgs/求人票検索.jpeg" class="containe">
         </div>

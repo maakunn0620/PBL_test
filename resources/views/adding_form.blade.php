@@ -1,30 +1,40 @@
+<!Doctype html>
 <html>
     <head>
-        <link rel="stylesheet" href="../resources/css/style.css">
+        <link rel="stylesheet" href="{{ asset('css/nakashima.css') }}">
         <meta charset="utf-8">
         <title>新規登録</title>
     </head>
     <body>
-        <p class="index">新規企業情報入力</p>
-    <form method="POST" action="add">
+        <h1 class="index">新規企業情報入力</h1>
+        <form method="POST" action="add">
+        <div class="warning_alert">
+            @if(count($errors) > 0)
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            @endif
+        </div>
         @csrf
         <table class="form" width="1000px">
             <tr>
-              <td width="300">採番</td>
+              <th width="300">採番</th>
               @foreach ($getno as $get_no)
               <td><input type="text" name="job_no" id="no" value="{{$get_no->job_no}}"></td>
               @endforeach
             </tr>
             <tr>
-              <td>会社名</td>
+              <th>会社名</th>
               <td><input type="text" name="company" size="40" id="company_name"></td>
             </tr>
             <tr>
-                <td>職種</td>
+                <th>職種</th>
                 <td><input type="text" name="jobs" size="40" id="jobtype"></td>
             </tr>
             <tr>
-                <td rowspan="2">都道府県</td>
+                <th rowspan="2">都道府県</th>
                 <td>
                     <table class="pre">
                         <td>
@@ -106,7 +116,7 @@
                         </td>
             </tr>
                 <tr>
-                    <td>求人学科</td>
+                    <th>求人学科</th>
                     <td>
                         <input type="checkbox" name="department[]" id="指定なし" value="15">指定なし<br>
                         <input type="checkbox" name="department[]" id="医療福祉" value="1">医療福祉学科<br>
@@ -126,24 +136,24 @@
                     </td>
                 </tr>
             <tr>
-                <td>求人票PDF</td>
+                <th>求人票PDF</th>
                 <td><input type="text" size="40" name="pdf" id="pdf"></td>
             </tr>
             <tr>
-                <td>本社所在地</td>
+                <th>本社所在地</th>
                 <td><input type="text" size="40" name="address" id="address"></td>
             </tr>
             <tr>
-                <td>会社HP</td>
+                <th>会社HP</th>
                 <td><input type="text" size="40" name="company_url" id="HP"></td>
             </tr>
             <tr>
-                <td>コメント</td>
+                <th>コメント</th>
                 <td><input type="text" size="40" name="comment" id="cment"></td>
             </tr>
           </table>
-          <br>
-          <input type="submit" calss = "bt" value="追加">
+          <button type="submit" calss = "bt">追加</button>
+          <button type="button" onclick="location.href='./manegement_top'">管理者画面へ</button>
     </form>
     </body>
 </html>

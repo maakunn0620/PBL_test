@@ -1,0 +1,39 @@
+body{
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+}
+
+table {
+    margin: 3px auto;
+    width: 800px;
+
+}
+
+.touroku th, td{
+    height: 20px;
+}
+
+.touroku th{
+    width: 30%;
+    background-color: #b3b3b3;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.touroku td{
+    color: #808080;
+}
+.cat{
+    width: 100%; /*親要素いっぱい広げる*/
+    height: 25%;
+    padding: 10px 10px; /*ボックスを大きくする*/
+    font-size: 16px;
+    border-radius: 5px; /*ボックス角の丸み*/
+    border: 2px solid #ddd;
+}
+
+.etc{
+    color: #acd7e6;
+}

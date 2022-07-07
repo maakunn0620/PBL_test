@@ -1,0 +1,115 @@
+/* style_test.css */
+
+body{
+    width:1000px;
+    margin-right: auto;
+    margin-left : auto;
+}
+
+.form {
+    margin: 3px auto;   /* 中心寄せ */
+    border-collapse: collapse;  /* 一本線 */
+
+
+}
+
+.form td, th{
+
+    border: 2px #a9a9a9 solid;
+    padding: 1em 2em;
+
+
+}
+
+.form th{
+    background-color: #c0c0c0;
+    color: white;
+}
+
+.form td{
+    vertical-align: top;
+    color: #696969;
+    text-align: left;
+}
+
+.pre td{
+    border: none;
+    text-align:left;
+}
+
+.bt{
+
+    background-color: #ffd700;
+    color: #ffffff;
+    border: #ffffff;
+    font-size: 24px;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    top: 100;
+    left: 50;
+}
+
+
+#index-seito{
+    font-size: 40px;
+    color: #696969;
+    text-align: left;
+}
+
+#index-kanri{
+    font-size: 40px;
+    color: #696969;
+    text-align: left;
+}
+
+
+
+
+/* style.css */
+body{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.list{
+    margin: 1px auto;
+}
+
+.list th{
+    height: 5px;
+    width: auto;
+    background-color: #b3b3b3;
+    color: white;
+    text-align: center;
+}
+
+.warning_alert li{
+    list-style-type: none;
+}
+.warning_alert ul{
+    display:flex;
+    list-style-type: none;
+    position: relative;
+    padding: 1rem 2rem;
+    text-align: center;
+    color: #170601;
+    border-radius: 0 10px 10px 10px;
+    background: #c86e53;
+}
+.warning_alert ul:after{
+    font-size: 5px;
+    font-size: 1.5rem;
+    position: absolute;
+    top: -24px;
+    left: 0;
+    height: 24px;
+    padding: 0 1em;
+    content: 'Error';
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    background: #bc4e2c;
+}

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Job_vacansies;
 use App\Models\Department;
 use App\Models\job_area;
+use App\Http\Requests\KyujinValidate;
 
 class AddController extends Controller
 {
@@ -14,7 +15,7 @@ class AddController extends Controller
         $getno = $Job_vacansies->getId();
         return view("adding_form",compact('getno'));
     }
-    public function add (Request $request){
+    public function add (KyujinValidate $request){
         //job_vacanciesへの追加
         $jobvacancies = array(
             'job_no' => $request->input("job_no"),
@@ -47,6 +48,6 @@ class AddController extends Controller
             $jobareaDB = new job_area;
             $jobareaDB->insert($jobarea);
         }
-        return redirect('/add');
+        return redirect('/top')->with('adding_message', '追加完了');
     }
 }

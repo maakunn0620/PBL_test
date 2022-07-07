@@ -7,6 +7,7 @@ use App\Models\Department;
 use App\Models\Job_area;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Session;
+use App\Http\Requests\KyujinValidate;
 
 class UpdateController extends Controller
 {
@@ -43,7 +44,7 @@ class UpdateController extends Controller
     }
 
     //変更内容を適応する
-    public function edit_update(Request $request){
+    public function edit_update(KyujinValidate $request){
         //job_vacanciesテーブルの更新内容を配列へ
         $jobvacancies = array(
             'id' => $request->input("id"),

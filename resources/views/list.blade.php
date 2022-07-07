@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <link rel="stylesheet" href="../resources/css/style.css">
+        <link rel="stylesheet" href="../resources/css/nakashima.css">
         <title>検索結果一覧
         </title>
     </head>
@@ -22,19 +22,17 @@
                 <th class="kinnuti">勤務地</th>
                 <th class="kyuujingakka">求人学科</th>
             </tr>
+            @isset($job_no)
+                @foreach ($job_no as $job_nos)
+                    <tr>
+                        <td>{{$job_nos->company}}</td>
+                        <td>{{$job_nos->jobs}}</td>
+                        <td>{{$job_nos->address}}</td>
+                        <td>{{$job_nos->department_name}}</td>
+                        <td><button type="submit">🔍</button></td>
+                    </tr>
+                @endforeach
+            @endisset
         </table>
-        <table border="0" width="1000px" class="list">
-        @isset($job_no)
-        @foreach ($job_no as $job_nos)
-            <tr>
-                <td>{{$job_nos->company}}</td>
-                <td>{{$job_nos->jobs}}</td>
-                <td>{{$job_nos->address}}</td>
-                <td>{{$job_nos->department_name}}</td>
-                <td><button type="submit">🔍</button></td>
-            </tr>
-        </table>
-        @endforeach
-        @endisset
     </body>
 </html>
