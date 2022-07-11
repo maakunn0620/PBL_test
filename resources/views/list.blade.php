@@ -2,8 +2,7 @@
 <html lang="ja">
     <head>
         <link rel="stylesheet" href="../resources/css/nakashima.css">
-        <title>検索結果一覧
-        </title>
+        <title>検索結果一覧</title>
     </head>
     <body>
         {{--<form method="POST" action="showall">
@@ -22,7 +21,7 @@
                 <th class="kinnuti">勤務地</th>
                 <th class="kyuujingakka">求人学科</th>
             </tr>
-            @isset($job_no)
+            @if(isset($job_no))
                 @foreach ($job_no as $job_nos)
                     <tr>
                         <td>{{$job_nos->company}}</td>
@@ -32,7 +31,7 @@
                         <td><button type="submit">🔍</button></td>
                     </tr>
                 @endforeach
-            @endisset
+            @endif
         </table>
     </body>
 </html>
