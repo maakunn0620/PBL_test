@@ -87,16 +87,16 @@ body{
     text-align: center;
 }
 
+/* adding_formエラーメッセージ */
 .warning_alert li{
     list-style-type: none;
 }
 .warning_alert ul{
-    display:flex;
     list-style-type: none;
     position: relative;
     padding: 1rem 2rem;
     text-align: center;
-    color: #170601;
+    color: white;
     border-radius: 0 10px 10px 10px;
     background: #c86e53;
 }

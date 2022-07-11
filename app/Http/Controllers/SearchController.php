@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Department;
+use App\Models\Job_vacansies;
 
 class SearchController extends Controller
 {
@@ -28,5 +29,11 @@ class SearchController extends Controller
             return redirect('search')->with('flash_message','見つかりませんでした。');
         }
         return view('list',compact('job_no'));
+    }
+    //もっと見る選択時、データを引っ張ってくる
+    public function showpopup(string $id){
+        $job_vacansies = new job_vacansies();
+        $job_detail  = $job_vacansies->motto_search($id);
+        return view('list',compact('job_detail'))->with('flash_message', 'もっと');
     }
 }

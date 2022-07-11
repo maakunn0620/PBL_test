@@ -30,7 +30,8 @@ Route::post('/data_list', [Controller::class, 'data_list']);
 
 //検索画面
 Route::get('/showall', [SearchController::class, 'showall']);
-Route::post('/showall', [SearchController::class, 'showall']);
+Route::get('/showall/{id}', [SearchController::class, 'showpopup'])->name('showpopup');
+//（　＾ω＾）・・・Route::post('/showall', [SearchController::class, 'showall']);
 Route::get('/search',[SearchController::class,'showsearch']);
 Route::post('/search',[SearchController::class,'search']);
 Route::get('/a', [SearchController::class, 'a']);

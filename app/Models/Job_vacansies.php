@@ -30,6 +30,17 @@ class Job_vacansies extends Model
         HAVING No = ".$id.";");
         return $initial_record;
     }
+    //もっとみるボタンを押した際の初期表示
+    public function motto_search(string $id){
+        $motto_record = DB::select("select No, A.job_no, company, jobs, GROUP_CONCAT(distinct area_no) as area_no, GROUP_CONCAT(distinct department_name) as department_name, B.job_department,pdf, address, company_url, cment
+        from job_vacacies A
+        inner join department B ON A.job_no = B.job_no
+        inner join department_master C ON C.job_department = B.job_department
+        inner join job_area D on A.job_no = D.job_no
+        group by B.job_no
+        HAVING No = ".$id.";");
+        return $motto_record;
+    }
     //名前検索時
     public function DB_search(string $param){
         $update_sub = DB::select("select No, A.job_no, company, jobs, address, GROUP_CONCAT(distinct department_name) as department_name

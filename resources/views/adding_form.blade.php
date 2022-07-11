@@ -8,17 +8,17 @@
     <body>
         <p class="index">新規企業情報入力</p>
         <form method="POST" action="add">
-        <div class="warning_alert">
-            @if(count($errors) > 0)
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-            @endif
-        </div>
         @csrf
         <table class="form" width="1000px">
+            <div class="warning_alert">
+                @if(count($errors) > 0)
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
             <tr>
               <th width="300">採番</th>
               @foreach ($getno as $get_no)
