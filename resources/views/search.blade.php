@@ -45,7 +45,7 @@
 <form method="POST" action="search">
     @csrf
         <span class="pulldownset">
-            <div class="search gyo-kai">業界</div>
+            <div class="search gyo-kai">学科</div>
                 <select name="industry">
                     <option value="null">指定なし</option>
                     <option value="1">医療福祉</option>

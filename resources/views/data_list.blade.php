@@ -40,7 +40,6 @@
                         <td>{{$initial_list->jobs}}</td>
                         <td>{{$initial_list->address}}</td>
                         <td>{{$initial_list->department_name}}</td>
-                        <td><button type="submit">🔍</button></td>
                         <td><button type="button" onclick="location.href='{{ route('edit.page', $initial_list->No) }}'">編集</a>
                         <td><button type="button" onclick="location.href='{{ route('delete.page', $initial_list->job_no) }}'">削除</a>
                     </tr>
