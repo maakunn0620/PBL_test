@@ -20,21 +20,21 @@
                 @endif
             </div>
             <tr>
-              <th width="300">採番</th>
+              <th width="300" class="required">採番</th>
               @foreach ($getno as $get_no)
               <td><input type="text" name="job_no" id="no" value="{{$get_no->job_no}}"></td>
               @endforeach
             </tr>
             <tr>
-              <th>会社名</th>
+              <th class="required">会社名</th>
               <td><input type="text" name="company" size="40" id="company_name"></td>
             </tr>
             <tr>
-                <th>職種</th>
+                <th class="required">職種</th>
                 <td><input type="text" name="jobs" size="40" id="jobtype"></td>
             </tr>
             <tr>
-                <th rowspan="2">都道府県</th>
+                <th rowspan="2" class="required">都道府県</th>
                 <td>
                     <table class="pre">
                         <td>
@@ -83,6 +83,7 @@
                                         <input type="checkbox" name="prefecture[]" id="茨城" value="8">茨城県<br>
                                         <input type="checkbox" name="prefecture[]" id="栃木" value="9">栃木県<br>
                                         <input type="checkbox" name="prefecture[]" id="群馬" value="10">群馬県<br>
+                                        <input type="checkbox" name="prefecture[]" id="埼玉" value="11">埼玉県<br>
                                         <input type="checkbox" name="prefecture[]" id="千葉" value="12">千葉県<br>
                                         <label>中部</label><br>
                                         <input type="checkbox" name="prefecture[]" id="新潟" value="15">新潟県<br>
@@ -116,7 +117,7 @@
                         </td>
             </tr>
                 <tr>
-                    <th>求人学科</th>
+                    <th class="required">求人学科</th>
                     <td>
                         <input type="checkbox" name="department[]" id="指定なし" value="15">指定なし<br>
                         <input type="checkbox" name="department[]" id="医療福祉" value="1">医療福祉学科<br>
@@ -136,11 +137,11 @@
                     </td>
                 </tr>
             <tr>
-                <th>求人票PDF</th>
+                <th class="required">求人票PDF</th>
                 <td><input type="text" size="40" name="pdf" id="pdf"></td>
             </tr>
             <tr>
-                <th>本社所在地</th>
+                <th class="required">本社所在地</th>
                 <td><input type="text" size="40" name="address" id="address"></td>
             </tr>
             <tr>

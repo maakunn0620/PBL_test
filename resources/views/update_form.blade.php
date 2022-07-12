@@ -29,19 +29,19 @@
                             <input type="hidden" name="id" value="{{$sp_companys->No}}">
                         </tr>
                         <tr>
-                            <th width="300">採番</th>
+                            <th width="300" class="required">採番</th>
                             <td><input type="text" id="no" name="job_no" value={{$sp_companys->job_no}}></td>
                         </tr>
                         <tr>
-                            <th>会社名</th>
+                            <th class="required">会社名</th>
                             <td><input type="text" size="40" name="company" id="company_name" value="{{$sp_companys->company}}"></td>
                         </tr>
                         <tr>
-                            <th>職種</th>
+                            <th class="required">職種</th>
                             <td><input type="text" size="40" id="jobtype" name="jobs" value="{{$sp_companys->jobs}}"></td>
                         </tr>
                         <tr>
-                            <th rowspan="2">都道府県</th>
+                            <th rowspan="2" class="required">都道府県</th>
                                 <td>
                                     <table class="pre">
                                         <td>
@@ -90,7 +90,8 @@
                                                         <input type="checkbox" name="prefecture[]" id="茨城" value="8" {{(in_array("8", $jobs_array)) ?'checked':'' }}>茨城県<br>
                                                         <input type="checkbox" name="prefecture[]" id="栃木" value="9" {{(in_array("9", $jobs_array)) ?'checked':'' }}>栃木県<br>
                                                         <input type="checkbox" name="prefecture[]" id="群馬" value="10" {{(in_array("10", $jobs_array)) ?'checked':'' }}>群馬県<br>
-                                                        <input type="checkbox" name="prefecture[]" id="千葉" value="12" {{(in_array("11", $jobs_array)) ?'checked':'' }}>千葉県<br>
+                                                        <input type="checkbox" name="prefecture[]" id="埼玉" value="11" {{(in_array("11", $jobs_array)) ?'checked':'' }}>埼玉県<br>
+                                                        <input type="checkbox" name="prefecture[]" id="千葉" value="12" {{(in_array("12", $jobs_array)) ?'checked':'' }}>千葉県<br>
                                                         <label>中部</label><br>
                                                         <input type="checkbox" name="prefecture[]" id="新潟" value="15" {{(in_array("15", $jobs_array)) ?'checked':'' }}>新潟県<br>
                                                         <input type="checkbox" name="prefecture[]" id="富山" value="16" {{(in_array("16", $jobs_array)) ?'checked':'' }}>富山県<br>
@@ -122,7 +123,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>求人学科</th>
+                                <th class="required">求人学科</th>
                                 <td>
                                     <input type="checkbox" name="department[]" id="指定なし" value="15" {{(in_array("指定なし", $department_array)) ?'checked':'' }}>指定なし<br>
                                     <input type="checkbox" name="department[]" id="医療福祉" value="1" {{(in_array("医療福祉学科", $department_array)) ?'checked':'' }}>医療福祉学科<br>
@@ -142,11 +143,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>求人票PDF</th>
+                                <th class="required">求人票PDF</th>
                                 <td><input type="text" size="40" name="pdf" id="pdf" value="{{$sp_companys->pdf}}"></td>
                             </tr>
                             <tr>
-                                <th>所在地</th>
+                                <th class="required">所在地</th>
                                 <td><input type="text" size="40" name="address" id="address" value="{{$sp_companys->address}}"></td>
                             </tr>
                             <tr>

@@ -113,3 +113,10 @@ body{
     border-radius: 10px 10px 0 0;
     background: #bc4e2c;
 }
+
+/* 必須マーク */
+.required::after {
+    content: " *";
+    color: rgb(228, 2, 2);
+    vertical-align: middle;
+  }
